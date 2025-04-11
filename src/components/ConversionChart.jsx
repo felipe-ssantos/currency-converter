@@ -1,6 +1,6 @@
 import React, { useEffect, useRef } from "react";
 import Chart from "chart.js/auto";
-import "../styles/ConversionChart.css";
+import "../styles/global-components.css";
 
 const ConversionChart = ({ history }) => {
   const chartRef = useRef(null);
@@ -26,18 +26,16 @@ const ConversionChart = ({ history }) => {
           labels: dates,
           datasets: [
             {
-              label: `Taxa de Câmbio (${fromCurrency} → ${toCurrency})`,
+              label: `${fromCurrency}/${toCurrency}`,
               data: rates,
-              borderColor: "#38b6ff",
-              borderWidth: 3 /* Linha mais espessa */,
-              tension: 0.4,
-              fill: true,
-              backgroundColor:
-                "rgba(56, 182, 255, 0.15)" /* Área mais visível */,
-              pointBackgroundColor: "#38b6ff",
-              pointBorderColor: "#ffffff",
-              pointRadius: 5,
-              pointHoverRadius: 8,
+              borderColor: "#28a745",
+              borderWidth: 2,
+              tension: 0.1,
+              fill: false,
+              pointBackgroundColor: "#fff",
+              pointBorderColor: "#28a745",
+              pointRadius: 3,
+              pointHoverRadius: 5,
             },
           ],
         },
@@ -46,59 +44,40 @@ const ConversionChart = ({ history }) => {
           maintainAspectRatio: false,
           plugins: {
             legend: {
-              labels: {
-                color: "#f8f9fa" /* Texto mais claro */,
-                font: {
-                  size: 14,
-                  weight: "500",
-                },
-              },
-            },
-            title: {
-              display: true,
-              text: `Evolução da Taxa de Câmbio: ${fromCurrency} → ${toCurrency}`,
-              color: "#ffffff",
-              font: {
-                size: 16,
-                weight: "bold",
-              },
-              padding: {
-                top: 10,
-                bottom: 20,
-              },
+              display: false,
             },
             tooltip: {
-              backgroundColor: "rgba(16, 18, 37, 0.95)" /* Fundo mais opaco */,
+              backgroundColor: "#1e2a3a",
               titleColor: "#38b6ff",
               bodyColor: "#ffffff",
-              borderColor: "#38b6ff",
+              borderColor: "#2a3b4d",
               borderWidth: 1,
-              padding: 12,
+              padding: 10,
               callbacks: {
                 label: (context) =>
                   ` ${context.parsed.y.toFixed(6)} ${toCurrency}`,
-                title: (context) => `Data: ${context[0].label}`,
               },
             },
           },
           scales: {
             x: {
               grid: {
-                color: "rgba(56, 182, 255, 0.2)" /* Grid mais visível */,
+                color: "#2a3b4d",
+                drawBorder: false,
               },
               ticks: {
-                color: "#a8c6ff" /* Ticks mais claros */,
+                color: "#8b9dc7",
                 maxRotation: 45,
                 minRotation: 45,
               },
             },
             y: {
-              beginAtZero: false,
               grid: {
-                color: "rgba(56, 182, 255, 0.2)" /* Grid mais visível */,
+                color: "#2a3b4d",
+                drawBorder: false,
               },
               ticks: {
-                color: "#a8c6ff" /* Ticks mais claros */,
+                color: "#8b9dc7",
                 callback: (value) => value.toFixed(4),
               },
             },
@@ -116,16 +95,16 @@ const ConversionChart = ({ history }) => {
 
   if (!history || history.length < 2) {
     return (
-      <div className="glass-card rounded-4 shadow-lg mt-4">
+      <div className="card shadow-sm mt-3">
         <div className="card-header">
-          <h3 className="mb-0 text-info chart-title">
-            <i className="bi bi-graph-up me-2"></i> Gráfico de Conversões
-          </h3>
+          <h5 className="mb-0">
+            <i className="bi bi-graph-up me-2"></i>Gráfico de Câmbio
+          </h5>
         </div>
         <div className="card-body text-center py-4">
           <p className="no-data-message">
             <i className="bi bi-exclamation-circle me-2"></i>
-            Faça pelo menos duas conversões para visualizar o gráfico
+            Dados insuficientes para exibir o gráfico
           </p>
         </div>
       </div>
@@ -133,13 +112,13 @@ const ConversionChart = ({ history }) => {
   }
 
   return (
-    <div className="glass-card rounded-4 shadow-lg mt-4">
+    <div className="card shadow-sm mt-3">
       <div className="card-header">
-        <h3 className="mb-0 text-info chart-title">
-          <i className="bi bi-graph-up me-2"></i> Gráfico de Conversões
-        </h3>
+        <h5 className="mb-0">
+          <i className="bi bi-graph-up me-2"></i>Gráfico de Câmbio
+        </h5>
       </div>
-      <div className="card-body">
+      <div className="card-body p-2">
         <div className="chart-container">
           <canvas ref={chartRef}></canvas>
         </div>

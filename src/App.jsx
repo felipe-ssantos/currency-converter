@@ -11,15 +11,14 @@ function App() {
   const [showClearModal, setShowClearModal] = useState(false);
 
   useEffect(() => {
-    // Carrega o histórico do localStorage
+    // localStorage
     const savedHistory = localStorage.getItem("conversionHistory");
     if (savedHistory) {
       setConversionHistory(JSON.parse(savedHistory));
     }
   }, []);
 
-  useEffect(() => {
-    // Salva o histórico no localStorage sempre que ele mudar
+  useEffect(() => {    
     localStorage.setItem(
       "conversionHistory",
       JSON.stringify(conversionHistory)
@@ -194,8 +193,7 @@ function App() {
           <div className="row">
             <div className="col-md-6 text-center text-md-start">
               <p className="small text-muted mb-0">
-                © {new Date().getFullYear()} Conversor de Moedas. Todos os
-                direitos reservados.
+                © {new Date().getFullYear()} Conversor de Moedas.
               </p>
             </div>
             <div className="col-md-6 text-center text-md-end">

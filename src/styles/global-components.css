@@ -1,0 +1,193 @@
+:root {    
+    --bs-body-bg: #121a24;
+    --bs-body-color: #e0e0e0;
+    --bs-primary: #38b6ff;
+    --bs-success: #28a745;
+    --bs-danger: #dc3545;
+    --bs-warning: #ffc107;
+    --bs-dark: #1e2a3a;
+    --bs-secondary: #8b9dc7;
+    --bs-border-color: #2a3b4d;    
+    --trading-darker: #16202b;
+    --trading-text-secondary: #8b9dc7;
+}
+
+.card {
+    background-color: var(--bs-dark);
+    border: 1px solid var(--bs-border-color);
+    border-radius: 0.5rem;
+    margin-bottom: 1rem;
+}
+
+.card-header {
+    background-color: var(--trading-darker);
+    border-bottom: 1px solid var(--bs-border-color);
+    color: var(--bs-primary);
+}
+
+.market-status {
+    display: flex;
+    align-items: center;
+    font-size: 0.75rem;
+}
+
+.market-indicator {
+    width: 8px;
+    height: 8px;
+    background-color: var(--bs-success);
+    border-radius: 50%;
+    margin-right: 6px;
+    animation: pulse 1.5s infinite;
+}
+
+.market-status-text {
+    color: var(--trading-text-secondary);
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.form-control, .form-select {
+    background-color: #253142;
+    border: 1px solid var(--bs-border-color);
+    color: var(--bs-body-color);
+}
+
+.form-control:focus, .form-select:focus {
+    background-color: #253142;
+    border-color: var(--bs-primary);
+    box-shadow: 0 0 0 0.2rem rgba(56, 182, 255, 0.25);
+    color: var(--bs-body-color);
+}
+
+.input-group-text {
+    background-color: #2a3b4d;
+    border: 1px solid var(--bs-border-color);
+    color: var(--trading-text-secondary);
+}
+
+.btn-swap {
+    background-color: #2a3b4d;
+    border: 1px solid var(--bs-border-color);
+    color: var(--bs-primary);
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.3s ease;
+}
+
+.btn-swap:hover {
+    background-color: var(--bs-primary);
+    color: white;
+    transform: rotate(180deg);
+}
+
+.btn-execute {
+    background-color: var(--bs-success);
+    color: white;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    transition: all 0.2s ease;
+}
+
+.btn-execute:hover {
+    background-color: #218838;
+    transform: translateY(-1px);
+}
+
+.conversion-result {
+    background-color: #253142;
+    border: 1px solid var(--bs-border-color);
+    border-radius: 0.25rem;
+    padding: 1rem;
+    margin: 1rem 0;
+}
+
+.result-display {
+    display: flex;
+    align-items: baseline;
+    margin-bottom: 0.5rem;
+}
+
+.result-amount {
+    font-size: 1.75rem;
+    font-weight: 600;
+    color: var(--bs-success);
+    margin-right: 0.5rem;
+}
+
+.result-currency {
+    font-size: 1rem;
+    color: var(--trading-text-secondary);
+}
+
+.rate-display {
+    font-size: 0.85rem;
+    color: var(--trading-text-secondary);
+}
+
+.table {
+    color: var(--bs-body-color);
+}
+
+.table-dark {
+    --bs-table-bg: transparent;
+    --bs-table-striped-bg: rgba(255, 255, 255, 0.05);
+    --bs-table-hover-bg: rgba(56, 182, 255, 0.1);
+}
+
+.table-header {
+    background-color: var(--trading-darker);
+    color: var(--trading-text-secondary);
+    text-transform: uppercase;
+    font-size: 0.8rem;
+    letter-spacing: 0.5px;
+}
+
+@keyframes pulse {
+    0% {
+        opacity: 1;
+    }
+
+    50% {
+        opacity: 0.5;
+    }
+
+    100% {
+        opacity: 1;
+    }
+}
+
+.loading-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 2rem;
+}
+
+.market-spinner {
+    width: 40px;
+    height: 40px;
+    border: 3px solid var(--bs-border-color);
+    border-top-color: var(--bs-primary);
+    border-radius: 50%;
+    animation: spin 1s linear infinite;
+    margin-bottom: 1rem;
+}
+
+@keyframes spin {
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+.no-data-message {
+    color: var(--trading-text-secondary);
+    font-size: 0.95rem;
+    text-align: center;
+    padding: 2rem;
+}
