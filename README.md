@@ -2,7 +2,6 @@
 
 ![GitHub last commit](https://img.shields.io/github/last-commit/felipe-ssantos/currency-converter)
 ![GitHub repo size](https://img.shields.io/github/repo-size/felipe-ssantos/currency-converter)
-![GitHub license](https://img.shields.io/github/license/felipe-ssantos/currency-converter)
 ![React](https://img.shields.io/badge/React-18-blue)
 ![Node.js](https://img.shields.io/badge/Node.js-18-green)
 ![Bootstrap](https://img.shields.io/badge/Bootstrap-5-purple)
