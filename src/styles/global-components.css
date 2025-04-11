@@ -1,4 +1,4 @@
-:root {    
+:root {
     --bs-body-bg: #121a24;
     --bs-body-color: #e0e0e0;
     --bs-primary: #38b6ff;
@@ -7,7 +7,7 @@
     --bs-warning: #ffc107;
     --bs-dark: #1e2a3a;
     --bs-secondary: #8b9dc7;
-    --bs-border-color: #2a3b4d;    
+    --bs-border-color: #2a3b4d;
     --trading-darker: #16202b;
     --trading-text-secondary: #8b9dc7;
 }
@@ -190,4 +190,15 @@
     font-size: 0.95rem;
     text-align: center;
     padding: 2rem;
+}
+
+.chart-container {
+    position: relative;
+    height: 400px;
+    width: 100%;
+}
+
+.chart-container canvas {
+    width: 100% !important;
+    height: 100% !important;
 }

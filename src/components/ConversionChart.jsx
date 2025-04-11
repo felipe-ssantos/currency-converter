@@ -1,6 +1,5 @@
 import React, { useEffect, useRef } from "react";
 import Chart from "chart.js/auto";
-import "../styles/global-components.css";
 
 const ConversionChart = ({ history }) => {
   const chartRef = useRef(null);
@@ -69,6 +68,8 @@ const ConversionChart = ({ history }) => {
                 color: "#8b9dc7",
                 maxRotation: 45,
                 minRotation: 45,
+                autoSkip: true,
+                maxTicksLimit: 10,
               },
             },
             y: {
@@ -86,12 +87,32 @@ const ConversionChart = ({ history }) => {
             intersect: false,
             mode: "index",
           },
+          elements: {
+            line: {
+              borderJoinStyle: "round",
+            },
+            point: {
+              hoverRadius: 6,
+              hoverBorderWidth: 2,
+            },
+          },
         },
       });
     }
 
     return () => chartInstance.current?.destroy();
   }, [history]);
+
+  useEffect(() => {
+    const handleResize = () => {
+      if (chartInstance.current) {
+        chartInstance.current.resize();
+      }
+    };
+
+    window.addEventListener("resize", handleResize);
+    return () => window.removeEventListener("resize", handleResize);
+  }, []);
 
   if (!history || history.length < 2) {
     return (
@@ -119,7 +140,7 @@ const ConversionChart = ({ history }) => {
         </h5>
       </div>
       <div className="card-body p-2">
-        <div className="chart-container">
+        <div className="chart-container" style={{ minHeight: "400px" }}>
           <canvas ref={chartRef}></canvas>
         </div>
       </div>

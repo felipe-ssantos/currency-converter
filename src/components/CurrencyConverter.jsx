@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { fetchExchangeRates } from "../services/api";
+import "bootstrap/dist/css/bootstrap.min.css";
 import "../styles/global-components.css";
 
 const CurrencyConverter = ({ onConversionComplete }) => {

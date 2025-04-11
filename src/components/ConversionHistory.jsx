@@ -1,5 +1,4 @@
 import React from "react";
-import "../styles/global-components.css";
 
 const ConversionHistory = ({
   history,

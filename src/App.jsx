@@ -5,6 +5,7 @@ import ConversionChart from "./components/ConversionChart";
 import "bootstrap/dist/css/bootstrap.min.css";
 import "bootstrap-icons/font/bootstrap-icons.css";
 import "./styles/App.css";
+import "./styles/global-components.css";
 
 function App() {
   const [conversionHistory, setConversionHistory] = useState([]);
@@ -176,7 +177,7 @@ function App() {
             <div className="col-lg-4">
               <h6 className="text-light fw-bold mb-3">Status</h6>
               <div className="d-flex align-items-center mb-2">
-                <span className="pulse-dot me-2"></span>
+                <span className="market-indicator me-2"></span>
                 <span className="text-success small">Operacional</span>
               </div>
               <div className="d-flex align-items-center">
