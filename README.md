@@ -6,7 +6,7 @@
 ![Bootstrap](https://img.shields.io/badge/Bootstrap-5-purple)
 ![Chart.js](https://img.shields.io/badge/Chart.js-4-green)
 
-Um conversor de moedas moderno desenvolvido com React, TypeScript e Bootstrap, com uma interface inspirada em plataformas de trading. Permite converter entre diferentes moedas com taxas ao vivo da ExchangeRate-API, mantém histórico de operações e exibe gráficos de evolução das taxas.
+Um conversor de moedas moderno desenvolvido com React e Bootstrap, com uma interface inspirada em plataformas de trading. Permite converter entre diferentes moedas com taxas ao vivo da ExchangeRate-API, mantém histórico de operações e exibe gráficos de evolução das taxas.
 
 ## 🚀 Funcionalidades
 
