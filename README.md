@@ -8,6 +8,16 @@
 
 Um conversor de moedas moderno desenvolvido com React e Bootstrap, com uma interface inspirada em plataformas de trading. Permite converter entre diferentes moedas com taxas ao vivo da ExchangeRate-API, mantém histórico de operações e exibe gráficos de evolução das taxas.
 
+---
+## 🎥 Preview
+
+![Preview do Conversor de Moedas](./assets/images/currency-converter_preview.png)
+
+<p align="center">
+  <a href="https://currency-converter-nf.vercel.app/"><strong>➥ Live Demo</strong></a>
+</p>
+
+
 ## 🚀 Funcionalidades
 
 - ✅ Conversão entre mais de 30 moedas internacionais
